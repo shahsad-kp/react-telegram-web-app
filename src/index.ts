@@ -53,5 +53,9 @@ export {
   InitData,
   InitDataUnsafe,
 } from './useInitData';
+export {
+  default as useOpenTelegramLink,
+  OpenTelegramLinkFunction,
+} from './useOpenTelegramLink';
 export type { Options } from './core';
 export { default as useWebApp } from './useWebApp';

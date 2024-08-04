@@ -24,6 +24,7 @@
 - [InitData](README.md#initdata)
 - [InitDataUnsafe](README.md#initdataunsafe)
 - [NotificationOccurredFunction](README.md#notificationoccurredfunction)
+- [OpenTelegramLinkFunction](README.md#opentelegramlinkfunction)
 - [Options](README.md#options)
 - [ReadTextFromClipboardFunction](README.md#readtextfromclipboardfunction)
 - [RemoveItemFunction](README.md#removeitemfunction)
@@ -44,6 +45,7 @@
 - [useExpand](README.md#useexpand)
 - [useHapticFeedback](README.md#usehapticfeedback)
 - [useInitData](README.md#useinitdata)
+- [useOpenTelegramLink](README.md#useopentelegramlink)
 - [useReadTextFromClipboard](README.md#usereadtextfromclipboard)
 - [useScanQrPopup](README.md#usescanqrpopup)
 - [useShowPopup](README.md#useshowpopup)
@@ -235,6 +237,28 @@ A method tells that a task or action has succeeded, failed, or produced a warnin
 
 ---
 
+### OpenTelegramLinkFunction
+
+Ƭ **OpenTelegramLinkFunction**: (`url`: `string`) => `void`
+
+#### Type declaration
+
+▸ (`url`): `void`
+
+A method that opens a telegram link inside the Telegram app. The Mini App will not be closed after this method is called.
+
+##### Parameters
+
+| Name  | Type     |
+| :---- | :------- |
+| `url` | `string` |
+
+##### Returns
+
+`void`
+
+---
+
 ### Options
 
 Ƭ **Options**: `Object`
@@ -245,6 +269,7 @@ This object describe options be able to set through WebAppProvider
 
 | Name                         | Type      | Description                                                                                                                                                                                                                                   |
 | :--------------------------- | :-------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `async?`                     | `boolean` | -                                                                                                                                                                                                                                             |
 | `smoothButtonsTransition?`   | `boolean` | When is `true`, we can smooth button transitions due to show(), hide() calls. So when you use MainButton or BackButton on multiple pages, there will be no noticeable flickering of the button during transitions **`Default Value`** `false` |
 | `smoothButtonsTransitionMs?` | `number`  | **`Default Value`** `10` **`Remarks`**                                                                                                                                                                                                        |
 
@@ -574,7 +599,7 @@ readonly [[`ImpactOccurredFunction`](README.md#impactoccurredfunction), [`Notifi
 
 ### useInitData
 
-▸ **useInitData**(): readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
+▸ **useInitData**(): readonly [`undefined` \| [`InitDataUnsafe`](README.md#initdataunsafe), `undefined` \| `string`]
 
 This hook provides `initDataUnsafe` and `initData`
 You have to look original description in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just return this.
@@ -588,7 +613,20 @@ const [initDataUnsafe, initData] = useInitData();
 
 #### Returns
 
-readonly [[`InitDataUnsafe`](README.md#initdataunsafe), `string`]
+readonly [`undefined` \| [`InitDataUnsafe`](README.md#initdataunsafe), `undefined` \| `string`]
+
+---
+
+### useOpenTelegramLink
+
+▸ **useOpenTelegramLink**(): [`OpenTelegramLinkFunction`](README.md#opentelegramlinkfunction)
+
+This hook that provided [OpenTelegramLinkFunction](README.md#opentelegramlinkfunction)
+You have to look original description openTelegramLink in [telegram!WebApp](https://core.telegram.org/bots/webapps#initializing-mini-apps), because hook just implements his.
+
+#### Returns
+
+[`OpenTelegramLinkFunction`](README.md#opentelegramlinkfunction)
 
 ---
 
